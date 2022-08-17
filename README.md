@@ -31,7 +31,6 @@ Nota: La aplicacion correra en localhost. existen errores si se intenta correr e
 3. Correr Client: npm run android, en caso de no tener un emulador(en mi caso utilice Android Studio), es posible correrlo en pagina web con el comando (npm run web)
 
 Nota1: Es posible crear usuarios nuevos, lo unico que no implemente fueron validaciones de email y contraseña para que sea mas facil acceder y probar la api(en un principio no hay usuarios creados, por eso necesitaran crear uno).
-Nota2: Es probable que existan textos(los errores por ej) que esten mal traducidos en ingles.
-Nota3: Cualquier duda o problema con respecto al codigo, con gusto pueden escribirme voy a estar pendiente. Muchas gracias por la oportunidad, es mi primera aplicacion con React Native, comprendo que hay muchos errores a mejorar!. Pero me agrado mucho usar React Native, asi que estare probando mas cosas con esta tecnologia.
+Nota2: Es probable que existan textos(los errores por ej) que esten mal traducidos en ingles. Cualquier duda o problema con respecto al codigo, con gusto pueden escribirme voy a estar pendiente. Muchas gracias por la oportunidad, es mi primera aplicacion con React Native, comprendo que hay muchos errores a mejorar!. Pero me agrado mucho usar React Native, asi que estare probando mas cosas con esta tecnologia.
 
 Alan Joel Cabrera

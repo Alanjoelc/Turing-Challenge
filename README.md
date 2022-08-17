@@ -2,33 +2,33 @@ Pasos para correr la APP:
 
 -API:
 
-1. Base de datos: MYSQL. Utilice MySQL Workbench para crear una nueva conexion y la base de datos.
+Base de datos: MYSQL. Utilice MySQL Workbench para crear una nueva conexion y la base de datos.
 
-1)  CREATE DATABASE IF NOT EXISTS turingdb; //Este es el comando para crear una nueva base de datos y donde "turingdb" es el nombre de nuestra nueva base de datos
-2)  USE turingdb; //Este es el comando para seleccionar nuestra base de datos
+1.  CREATE DATABASE IF NOT EXISTS turingdb; //Este es el comando para crear una nueva base de datos y donde "turingdb" es el nombre de nuestra nueva base de datos
+2.  USE turingdb; //Este es el comando para seleccionar nuestra base de datos
 
-2. ENV: Se necesita crear un archivo .env con las siguientes variables de entorno:
+ENV: Se necesita crear un archivo .env con las siguientes variables de entorno:
 
-1)  PORT = 3001 //Se refiere a puerto donde correra nuestra API.
-2)  USER = root //Se refiere al Username de la conexion
-3)  PASSWORD = 15935 //Se refiere a la password de la conexion
-4)  DATABASE_NAME = turingdb //Se refiere al nombre que asignamos a nuestra base de datos
+1.  PORT = 3001 //Se refiere a puerto donde correra nuestra API.
+2.  USER = root //Se refiere al Username de la conexion
+3.  PASSWORD = 15935 //Se refiere a la password de la conexion
+4.  DATABASE_NAME = turingdb //Se refiere al nombre que asignamos a nuestra base de datos
 
-3. Instalar dependencias: npm i
+Instalar dependencias: npm i
 
-4. Correr la API: npm run start (en primera instancia correra la API y creara las tablas necesarias automaticamente, podran ver si la conexion fue correcta desde la consola)
+Correr la API: npm run start (en primera instancia correra la API y creara las tablas necesarias automaticamente, podran ver si la conexion fue correcta desde la consola)
 
 Nota: La aplicacion correra en localhost. existen errores si se intenta correr en WSL2
 
 -Client:
 
-1. ENV: Se necesita crear un archivo .env con las siguientes variables de entorno:
+ENV: Se necesita crear un archivo .env con las siguientes variables de entorno:
 
-1) API_URL = http://localhost:3001 //se refiere a la url de nuestra API
+1. API_URL = http://localhost:3001 //se refiere a la url de nuestra API
 
-2. Instalar dependencias: npm i
+Instalar dependencias: npm i
 
-3. Correr Client: npm run android, en caso de no tener un emulador(en mi caso utilice Android Studio), es posible correrlo en pagina web con el comando (npm run web)
+Correr Client: npm run android, en caso de no tener un emulador(en mi caso utilice Android Studio), es posible correrlo en pagina web con el comando (npm run web)
 
 Nota1: Es posible crear usuarios nuevos, lo unico que no implemente fueron validaciones de email y contraseña para que sea mas facil acceder y probar la api(en un principio no hay usuarios creados, por eso necesitaran crear uno).
 Nota2: Es probable que existan textos(los errores por ej) que esten mal traducidos en ingles.

@@ -13,7 +13,7 @@ toDoRouter.get("/:id", (req, res) => {
         if (rows.length) {
           res.json(rows);
         } else {
-          res.send("This user has no tasks yet");
+          res.json({ message: "This user has no tasks yet" });
         }
       } else {
         throw new Error(err);
@@ -24,20 +24,21 @@ toDoRouter.get("/:id", (req, res) => {
 
 toDoRouter.post("/newtodo", (req, res) => {
   let { idUser, content } = req.body;
-  console.log(idUser, content);
+  let dateNow = Date();
   let data = {
     id: null,
     idUser: idUser,
     content: content,
+    date: dateNow,
   };
   mysqlConnection.query(
     "INSERT INTO todo SET?",
     [data],
     (err, rows, fields) => {
       if (!err) {
-        res.send(`` + rows.insertId);
+        res.json({ id: `` + rows.insertId });
       } else {
-        res.send("incomplete fields");
+        res.json({ message: "incomplete fields" });
       }
     }
   );
@@ -45,12 +46,13 @@ toDoRouter.post("/newtodo", (req, res) => {
 
 toDoRouter.delete("/deletetodo", (req, res) => {
   let { idTodo } = req.body;
+
   mysqlConnection.query(
     "DELETE FROM todo Where id =?",
     [idTodo],
     (err, rows, fields) => {
       if (!err) {
-        res.send("Todo deleted!");
+        res.json({ message: "Todo deleted" });
       } else {
         throw new Error(err);
       }

@@ -3,8 +3,6 @@ import * as dotenv from "dotenv";
 import { createTables } from "../db/createTables.js";
 dotenv.config();
 
-console.log(process.env.user);
-
 const mysqlConnection = mysql.createConnection({
   host: "localhost",
   user: process.env.USER,

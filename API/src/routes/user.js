@@ -13,12 +13,12 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/newuser", async (req, res) => {
+router.post("/newuser", (req, res) => {
   const { email, password } = req.body;
   mysqlConnection.query(
     "select * from user where email = ?",
     [email],
-    async (err, rows, fields) => {
+    (err, rows, fields) => {
       if (!rows.length) {
         let date = Date();
         let data = {
@@ -34,18 +34,22 @@ router.post("/newuser", async (req, res) => {
             if (err) {
               throw Error(err);
             } else {
-              res.send("New user created successfully");
+              console.log(rows);
+              res.json({
+                message: "New user created successfully",
+                idNewUser: rows.insertId,
+              });
             }
           }
         );
       } else {
-        res.send("The email is already registered");
+        res.json({ message: "The email is already registered" });
       }
     }
   );
 });
 
-router.get("/validate", (req, res) => {
+router.post("/validate", (req, res) => {
   const { email, password } = req.body;
   mysqlConnection.query(
     "select * from user where email = ?",
@@ -53,13 +57,13 @@ router.get("/validate", (req, res) => {
     (err, rows, fields) => {
       if (rows.length) {
         if (rows[0].email === email && rows[0].password === password) {
-          res.send(`` + rows[0].id);
+          res.json(`` + rows[0].id);
         } else {
-          res.send("Password is incorrect");
+          res.json("Password is incorrect");
         }
       }
       if (!rows.length) {
-        res.send("Unregistered email");
+        res.json("Unregistered email");
       }
     }
   );

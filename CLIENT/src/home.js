@@ -19,8 +19,6 @@ export default function Home({ navigation }) {
   const [error, setError] = useState("");
   const [check, setCheck] = useState(false);
 
-  console.log(toDos);
-
   const toDosUser = async () => {
     let response = await fetch(`${API_URL}/todo/${sessionStorage.user}`, {
       method: "GET",

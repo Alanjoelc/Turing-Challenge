@@ -4,15 +4,15 @@ Pasos para correr la APP:
 
 Base de datos: MYSQL. Utilice MySQL Workbench para crear una nueva conexion y la base de datos.
 
-1.  CREATE DATABASE IF NOT EXISTS turingdb; //Este es el comando para crear una nueva base de datos y donde "turingdb" es el nombre de nuestra nueva base de datos
-2.  USE turingdb; //Este es el comando para seleccionar nuestra base de datos
+-> CREATE DATABASE IF NOT EXISTS turingdb; //Este es el comando para crear una nueva base de datos y donde "turingdb" es el nombre de nuestra nueva base de datos
+-> USE turingdb; //Este es el comando para seleccionar nuestra base de datos
 
 ENV: Se necesita crear un archivo .env con las siguientes variables de entorno:
 
-1.  PORT = 3001 //Se refiere a puerto donde correra nuestra API.
-2.  USER = root //Se refiere al Username de la conexion
-3.  PASSWORD = 15935 //Se refiere a la password de la conexion
-4.  DATABASE_NAME = turingdb //Se refiere al nombre que asignamos a nuestra base de datos
+-> PORT = 3001 //Se refiere a puerto donde correra nuestra API.
+-> USER = root //Se refiere al Username de la conexion
+-> PASSWORD = 15935 //Se refiere a la password de la conexion
+-> DATABASE_NAME = turingdb //Se refiere al nombre que asignamos a nuestra base de datos
 
 Instalar dependencias: npm i
 
@@ -24,7 +24,7 @@ Nota: La aplicacion correra en localhost. existen errores si se intenta correr e
 
 ENV: Se necesita crear un archivo .env con las siguientes variables de entorno:
 
-1. API_URL = http://localhost:3001 //se refiere a la url de nuestra API
+-> API_URL = http://localhost:3001 //se refiere a la url de nuestra API
 
 Instalar dependencias: npm i
 
